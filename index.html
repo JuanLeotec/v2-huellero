@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema de Control de Asistencia — LeoTecnicas</title>
+<meta name="theme-color" content="#1f6fe0">
+<link rel="icon" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ===================== SPLASH SCREEN ===================== -->
+<div id="splash">
+  <div class="splash-logo-wrap"><img src="assets/logo.png" alt="LeoTecnicas"></div>
+  <div class="splash-text">
+    <h1>Bienvenido(a)</h1>
+    <p>Sistema de Control de Asistencia</p>
+    <div class="splash-brand">LeoTecnicas</div>
+  </div>
+  <div class="splash-loader"><div class="splash-loader-fill"></div></div>
+  <div class="splash-caption">Cargando registros…</div>
+</div>
+
+<!-- ===================== APP SHELL ===================== -->
+<div id="app">
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <img src="assets/logo.png" alt="Logo">
+      <div class="sidebar-brand-text"><strong>LeoTecnicas</strong><span>Asistencia</span></div>
+    </div>
+    <div id="sidebarNav"></div>
+    <div class="sidebar-spacer"></div>
+    <div class="sidebar-foot">Sistema v2.0.0</div>
+  </nav>
+
+  <div class="main-col">
+    <header class="app-header" id="appHeader"></header>
+
+    <main>
+      <section class="view" id="view-dashboard"></section>
+      <section class="view" id="view-registros"></section>
+      <section class="view" id="view-marcas"></section>
+      <section class="view" id="view-semanal"></section>
+      <section class="view" id="view-calendario"></section>
+    </main>
+  </div>
+</div>
+
+<!-- ===================== DATOS (sin modificar) ===================== -->
+<script src="data/dashboard-data.js"></script>
+<script src="data/data.js"></script>
+<script src="data/sin_marca.js"></script>
+
+<!-- ===================== LIBRERÍAS ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.462.0/dist/umd/lucide.min.js"></script>
+
+<!-- ===================== APP ===================== -->
+<script type="module" src="js/main.js"></script>
+<script>
+  // Arranque del splash: se resuelve en paralelo a la carga de módulos.
+  window.addEventListener('DOMContentLoaded', () => {
+    import('./js/components/splash.js').then(m => m.runSplash());
+  });
+</script>
+</body>
+</html>
