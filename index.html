@@ -69,11 +69,5 @@
 
 <!-- ===================== APP ===================== -->
 <script type="module" src="js/main.js"></script>
-<script>
-  // Arranque del splash: se resuelve en paralelo a la carga de módulos.
-  window.addEventListener('DOMContentLoaded', () => {
-    import('./js/components/splash.js').then(m => m.runSplash());
-  });
-</script>
 </body>
 </html>

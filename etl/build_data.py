@@ -153,21 +153,21 @@ def js(obj):
     return json.dumps(obj, ensure_ascii=False)
 
 with open('/home/claude/project/data/dashboard-data.js','w',encoding='utf-8') as f:
-    f.write('const DASHBOARD_DATA = ' + js(DASHBOARD_DATA) + ';\n\n')
+    f.write('window.DASHBOARD_DATA = ' + js(DASHBOARD_DATA) + ';\n\n')
     f.write('// Agregado semanal utilizado en "Días de la semana con más retardos"\n')
-    f.write('const WEEK_DATA = ' + js(WEEK_DATA) + ';\n')
+    f.write('window.WEEK_DATA = ' + js(WEEK_DATA) + ';\n')
 
 with open('/home/claude/project/data/data.js','w',encoding='utf-8') as f:
-    f.write('const FULL_DATA = ' + js(FULL_DATA) + ';\n')
+    f.write('window.FULL_DATA = ' + js(FULL_DATA) + ';\n')
 
 with open('/home/claude/project/data/sin_marca.js','w',encoding='utf-8') as f:
-    f.write('const SIN_MARCA = ' + js(SIN_MARCA) + ';\n\n')
-    f.write('const ULTIMO_SABADO = ' + js(ULTIMO_SABADO) + ';\n\n')
-    f.write('const SEMANAS = ' + js(SEMANAS) + ';\n')
+    f.write('window.SIN_MARCA = ' + js(SIN_MARCA) + ';\n\n')
+    f.write('window.ULTIMO_SABADO = ' + js(ULTIMO_SABADO) + ';\n\n')
+    f.write('window.SEMANAS = ' + js(SEMANAS) + ';\n')
 
 with open('/home/claude/project/data/calendar-data.js','w',encoding='utf-8') as f:
-    f.write('const CAL_DATA = ' + js(CAL_DATA) + ';\n\n')
-    f.write('const CAL_ULTIMO_SAB = ' + js(ULTIMO_SABADO) + ';\n\n')
-    f.write('const CAL_NAMES = ' + js(CAL_NAMES) + ';\n')
+    f.write('window.CAL_DATA = ' + js(CAL_DATA) + ';\n\n')
+    f.write('window.CAL_ULTIMO_SAB = ' + js(ULTIMO_SABADO) + ';\n\n')
+    f.write('window.CAL_NAMES = ' + js(CAL_NAMES) + ';\n')
 
 print('Archivos escritos correctamente.')

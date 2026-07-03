@@ -7,6 +7,7 @@ import { renderSidebar } from './components/sidebar.js';
 import { renderHeader } from './components/header.js';
 import { runSplash } from './components/splash.js';
 import { attachRipple } from './core/utils.js';
+import { runSplash } from './components/splash.js';
 import * as dashboard from './modules/dashboard.js';
 import * as registros from './modules/registros.js';
 import * as marcasFaltantes from './modules/marcasFaltantes.js';
@@ -26,3 +27,4 @@ registerModule('semanal', reporteSemanal);
 registerModule('calendario', calendario);
 
 initRouter('dashboard');
+runSplash();
